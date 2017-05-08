@@ -71,7 +71,8 @@ npm run dev
 ### 底部导航图片的on与off变换（用到了$route对象中path关键词 即：$route.path）
 
 ***
-<code><img class="tab-icon" :src=" tab.path == $route.path ? tab.iconUrlOn : tab.iconUrlOff " /></code>
+<code> <img class="tab-icon" :src=" tab.path == $route.path ? tab.iconUrlOn : tab.iconUrlOff " />
+</code>
 
 ### classfy组件的左侧tab切换组件实现
 
@@ -81,8 +82,9 @@ npm run dev
 ```
 methods:{
 >   setCur:function(index){
->       this.tagList.map(function(val,i){
->          if(i == index){
+>       this.tagList.map(function(val,i){
+>           // 如果i和传过来的idnex值正好相等就让此元素加上active
+>          if(i == index){
 >             val.iscur = true;
 >          }else{
 >             val.iscur = false;
