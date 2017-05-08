@@ -1,6 +1,6 @@
 # mobile-mall
 
-> this is vue-cli+vue-router+vue-resource+
+> this is vue-cli+vue-router+vue-resource+vuex
 
 ## Build Setup
 
@@ -71,12 +71,14 @@ npm run dev
 ### 底部导航图片的on与off变换（用到了$route对象中path关键词 即：$route.path）
 
 ***
-><img class="tab-icon" :src=" tab.path == $route.path ? tab.iconUrlOn : tab.iconUrlOff " />
+<code>
+<img class="tab-icon" :src=" tab.path == $route.path ? tab.iconUrlOn : tab.iconUrlOff " />
+</code>
 
 ### classfy组件的左侧tab切换组件实现
 
 ***
-> <li v-for="(item,index) in tagList" v-text="item.name" :class="{cur:item.iscur}" @click="setCur(index)"></li>
+<code> <li v-for="(item,index) in tagList" v-text="item.name" :class="{cur:item.iscur}" @click="setCur(index)"></li>
 >methods:{
 > setCur:function(index){
 >    this.tagList.map(function(val,i){
@@ -88,6 +90,7 @@ npm run dev
 >     })
 >   }
 >}
+</code>
 
 
 
