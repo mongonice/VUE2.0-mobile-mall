@@ -79,17 +79,19 @@ npm run dev
 
 ***
 <code> <li v-for="(item,index) in tagList" v-text="item.name" :class="{cur:item.iscur}" @click="setCur(index)"></li>
->methods:{
-> setCur:function(index){
->    this.tagList.map(function(val,i){
->        if(i == index){
->           val.iscur = true;
->        }else{
->           val.iscur = false;
->        }
->     })
->   }
->}
+</code>
+<code>
+>84 methods:{
+>85     setCur:function(index){
+>86       this.tagList.map(function(val,i){
+>          if(i == index){
+>             val.iscur = true;
+>          }else{
+>             val.iscur = false;
+>          }
+>       })
+>     }
+>   }
 </code>
 
 
