@@ -77,9 +77,8 @@ npm run dev
 ### classfy组件的左侧tab切换组件实现
 
 ***
-<code> <li v-for="(item,index) in tagList" v-text="item.name" :class="{cur:item.iscur}" @click="setCur(index)"></li>
-</code>
 ```
+<li v-for="(item,index) in tagList" v-text="item.name" :class="{cur:item.iscur}" @click="setCur(index)"></li>
 methods:{
    setCur:function(index){
       this.tagList.map(function(val,i){
