@@ -71,19 +71,17 @@ npm run dev
 ### 底部导航图片的on与off变换（用到了$route对象中path关键词 即：$route.path）
 
 ***
-<code>
-<img class="tab-icon" :src=" tab.path == $route.path ? tab.iconUrlOn : tab.iconUrlOff " />
-</code>
+<code><img class="tab-icon" :src=" tab.path == $route.path ? tab.iconUrlOn : tab.iconUrlOff " /></code>
 
 ### classfy组件的左侧tab切换组件实现
 
 ***
 <code> <li v-for="(item,index) in tagList" v-text="item.name" :class="{cur:item.iscur}" @click="setCur(index)"></li>
 </code>
-<code>
->84 methods:{
->85     setCur:function(index){
->86       this.tagList.map(function(val,i){
+```
+methods:{
+>   setCur:function(index){
+>       this.tagList.map(function(val,i){
 >          if(i == index){
 >             val.iscur = true;
 >          }else{
@@ -92,7 +90,7 @@ npm run dev
 >       })
 >     }
 >   }
-</code>
+```
 
 
 
