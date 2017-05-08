@@ -35,8 +35,10 @@ $cd 项目的根目录下
 npm install
 # 走起
 npm run dev
+```
 
 ### 生成的目录结构
+
 <pre>
 ├── build               // webpack配置文件
 ├── config              // 主要的工程配置
@@ -57,6 +59,7 @@ npm run dev
 </pre>
 
 ### 技术点
+
 ***
 * vue-router进行配置路由
 * vue-resource进行ajax交互
@@ -66,10 +69,12 @@ npm run dev
 * transition动画交互  ?????
 
 ### 底部导航图片的on与off变换（用到了$route对象中path关键词 即：$route.path）
+
 ***
 ><img class="tab-icon" :src=" tab.path == $route.path ? tab.iconUrlOn : tab.iconUrlOff " />
 
 ### classfy组件的左侧tab切换组件实现
+
 ***
 > <li v-for="(item,index) in tagList" v-text="item.name" :class="{cur:item.iscur}" @click="setCur(index)"></li>
 >methods:{
