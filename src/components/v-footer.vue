@@ -50,17 +50,17 @@ export default {
 <style scoped>
   .footer-tabs{
     position:fixed; 
-    width:100%; 
+    width:100%;
     left:0; 
     bottom:0; 
-    background:#ccc;
-    padding:0.15rem 0 0.01rem;
+    background:#333;
+    padding:0.16rem 0 0.08rem;
   }
   .footer-tabs>li a{
     width:25%;
     float:left;
     text-align:center;
-    color:#333;
+    color:#666;
   }
   .footer-tabs>li .tab-icon{
     display:block;
@@ -71,9 +71,9 @@ export default {
   .footer-tabs>li i{
     display:block;
     font-size:0.2rem;
-    line-height:0.28rem;
+    line-height:0.36rem;
   }
   .footer-tabs>li .active{
-    color:#fff68f !important;
+    color:#f9f027 !important;
   }
 </style>

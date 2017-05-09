@@ -20,7 +20,7 @@ export default {
       // 成功返回来的data
       var arr = response.bodyText.substring(1,response.bodyText.length-1).split(',');
       this.wholeCont = arr;
-      this.content = arr[0].replace(/'/g,'');
+      this.content = arr[0].replace(/"/g,'');
     },(data, status, request)=>{
       // 失败之后
       console.log('fail' + status + "," + request);
@@ -38,7 +38,7 @@ export default {
   methods:{
     changeContent:function(index){
       console.log('点击的第'+index)
-      this.content = this.wholeCont[index].replace(/'/g,'')
+      this.content = this.wholeCont[index].replace(/"/g,'')
     }
   }
 }

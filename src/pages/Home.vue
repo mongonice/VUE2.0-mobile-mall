@@ -2,8 +2,7 @@
   <div id="Home">
     <!--    头部轮播图    -->
     <div class="block">
-      <!-- <span class="demonstration">Click 指示器触发</span> -->
-      <el-carousel trigger="click" height="2.8rem">
+      <el-carousel trigger="click">
         <el-carousel-item v-for="item in items">
           <a :href="item.url" class="h-header-tab">{{ item.title }}</a>
         </el-carousel-item>
@@ -13,13 +12,16 @@
     <div>
       <h2 class="h-second-tit">主题馆</h2>
       <ul class="h-theme-list clearfix">
-        <li v-for="(theme, index) in themeList"><a href="##"> {{ theme.name }}</a></li>
+        <li v-for="(theme, index) in themeList"><a href="##"><img class="theme-pic" :src="theme.imgUrl" alt=""/></a></li>
       </ul>
     </div>
     <div>
     </div>
     <div>
       <h2 class="h-second-tit">折扣区</h2>
+      <ul class="h-theme-list clearfix">
+        <li v-for="(theme, index) in themeList"><a href="##"><img class="theme-pic" :src="theme.imgUrl" alt=""/></a></li>
+      </ul>
     </div>
   </div>
 </template>
@@ -70,6 +72,9 @@ export default {
 @var: @distance;
 @distance: 0.01rem;
 @length:0.01rem;
+.el-carousel{
+  overflow-y:hidden;
+}
 .el-carousel__item:nth-child(2n) {
    background-color: #99a9bf;
 }
@@ -82,26 +87,28 @@ export default {
   line-height:2.8rem;
 }
 .h-second-tit{
-  font-size:3*@baseFontSize;
+  font-size:2.6*@baseFontSize;
   text-align:left;
-  border-left:10*@length solid red;
+  border-left:10*@length solid #f9f027;
   margin:1*@baseFontSize 0;
   padding-left:1*@baseFontSize;
 }
 .h-theme-list{
+  padding:0 2%;
   li{
     float:left;
-    width:50%;
-    height:200*@length;
+    width:49%;
+    margin-bottom:10*@length;
+    a{
+      display:block;
+      .theme-pic{
+        display:block;
+        width:100%;
+      }
+    }
   }
-  li:nth-child(3n){
-    background:#390;
-  }
-  li:nth-child(3n+1){
-    background:pink;
-  }
-  li:nth-child(3n+2){
-    background:blue;
+  li:nth-child(2n+1){
+    margin-right:2%;
   }
 }
 

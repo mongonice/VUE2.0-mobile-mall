@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="my">
     <div class="my-info">
       <div class="my-info-wrap">
       	<img class="my-icon" src="../assets/images/my-icon.png" height="78" width="78" alt="">
@@ -60,9 +60,8 @@ export default {
 .my-info{
   width:100%;
   height:2.8rem;
-  background:#ccc;
+  background:#f9f027;
   display:table;
-  
 }
 .my-info-wrap{
 	display:table-cell;
@@ -80,6 +79,8 @@ export default {
 .my-list{
   width:90%;
   margin:0.2rem auto 0;
+  padding-bottom:2rem;
+
 }
 .my-list>li{
   font-size:0.24rem;

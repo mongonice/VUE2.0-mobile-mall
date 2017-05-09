@@ -1,27 +1,27 @@
 {
-	data:[
+	"data":[
 	{
-	   url:'##',
-	   name:'主题1'
+	   "url":"##",
+	   "imgUrl":"http://localhost:8080/static/images/one.png"
 	},
 	{
-	   url:'##',
-	   name:'主题2'
+	   "url":"##",
+	   "imgUrl":"http://localhost:8080/static/images/one.png"
 	},
 	{
-	   url:'##',
-	   name:'主题3'
+	   "url":"##",
+	   "imgUrl":"http://localhost:8080/static/images/two.png"
 	},
 	{
-	   url:'##',
-	   name:'主题4'
+	   "url":"##",
+	   "imgUrl":"http://localhost:8080/static/images/two.png"
 	},
 	{
-	   url:'##',
-	   name:'主题5'
+	   "url":"##",
+	   "imgUrl":"http://localhost:8080/static/images/one.png"
 	},
 	{
-	   url:'##',
-	   name:'主题6'
+	   "url":"##",
+	   "imgUrl":"http://localhost:8080/static/images/one.png"
 	},
 ]}

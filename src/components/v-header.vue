@@ -21,10 +21,11 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style lang="less" scoped>
+<style scoped>
 .header-title{
-  background:#ccc;
+  background:#333;
   font-size:0.26rem;
   line-height:0.6rem;
+  color:#fff;
 }
 </style>

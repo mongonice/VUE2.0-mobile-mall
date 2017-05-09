@@ -60,7 +60,7 @@ export default {
       isAllSelected:false,
       orders:[
         {
-          ProductThumbnail:require('../assets/images/pro.jpg'),
+          ProductThumbnail:require('../assets/images/pro1.jpg'),
           isEdit: true,
           isSelected: false,
           detail:'宝宝婴儿奶粉 三段实惠放心购买来自澳大利亚的纯天然奶牛',
@@ -68,7 +68,7 @@ export default {
           number:2
         },
         {
-          ProductThumbnail:require('../assets/images/pro.jpg'),
+          ProductThumbnail:require('../assets/images/pro2.jpg'),
           isEdit: true,
           isSelected: false,
           detail:'宝宝婴儿奶粉 三段实惠放心购买来自澳大利亚的纯天然奶牛',
@@ -76,7 +76,7 @@ export default {
           number:1
         },
         {
-          ProductThumbnail:require('../assets/images/pro.jpg'),
+          ProductThumbnail:require('../assets/images/pro3.jpg'),
           isEdit: true,
           isSelected: false,
           detail:'宝宝婴儿奶粉 三段实惠放心购买来自澳大利亚的纯天然奶牛',
@@ -84,7 +84,7 @@ export default {
           number:2
         },
         {
-          ProductThumbnail:require('../assets/images/pro.jpg'),
+          ProductThumbnail:require('../assets/images/pro1.jpg'),
           isEdit: true,
           isSelected: false,
           detail:'宝宝婴儿奶粉 三段实惠放心购买来自澳大利亚的纯天然奶牛',
@@ -92,7 +92,15 @@ export default {
           number:2
         },
         {
-          ProductThumbnail:require('../assets/images/pro.jpg'),
+          ProductThumbnail:require('../assets/images/pro2.jpg'),
+          isEdit: true,
+          isSelected: false,
+          detail:'宝宝婴儿奶粉 三段实惠放心购买来自澳大利亚的纯天然奶牛',
+          unitPrice:100,
+          number:2
+        },
+        {
+          ProductThumbnail:require('../assets/images/pro2.jpg'),
           isEdit: true,
           isSelected: false,
           detail:'宝宝婴儿奶粉 三段实惠放心购买来自澳大利亚的纯天然奶牛',
@@ -214,16 +222,17 @@ input,button{
   color:@bgColor;
 }
 .goods-list{
+  padding-bottom:200*@var;
   li{
-    border-bottom:8 * @var solid @baseColor;
-    padding:8*@var 16*@var 8*@var 40*@var;
+    border-bottom:8 * @var solid #f5f5f5;
+    padding:8*@var 16*@var 10*@var 40*@var;
     .goods-edit{
       width:100%;
       float:right;
       font-size:20*@var;
       line-height:48*@var;
       text-align:right;
-      border-bottom:3px solid @baseColor;
+      border-bottom:3px solid #f5f5f5;
       margin-bottom:10*@var;
     }
     .goods-radio{
@@ -273,15 +282,17 @@ input,button{
 
 .pay-wrap{
   position:fixed;
-  left:0;
-  bottom:0.92rem;
-  border-bottom:1px solid @bgColor;
-  background:@baseColor;
+  z-index:100;
   width:100%;
   height:80*@var;
+  left:0;
+  bottom:1.06rem;
+  border-bottom:1px solid @bgColor;
+  background:@baseColor;
   .pay-radio{
     .radioStyle;
     color:@baseColor;
+    border:1px solid #fff;
     margin:26*@var 0 0 40*@var;
   }
   .goods-all{

@@ -1,13 +1,13 @@
 [
-	'vue',
-	'webpack',
-	'less',
-	'sass',
-	'es6',
-	'html5',
-	'react',
-	'angular',
-	'gulp',
-	'grunt',
-	'node'
+	"vue",
+	"webpack",
+	"less",
+	"sass",
+	"es6",
+	"html5",
+	"react",
+	"angular",
+	"gulp",
+	"grunt",
+	"node"
 ]
