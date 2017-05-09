@@ -68,7 +68,7 @@ npm run dev
 * vuex状态管理   ?????
 * transition动画交互  ?????
 
-### 底部导航图片的on与off变换（用到了![$route](https://router.vuejs.org/zh-cn/api/route-object.html)对象中path关键词 即：$route.path）
+### 底部导航图片的on与off变换（用到了[$route](https://router.vuejs.org/zh-cn/api/route-object.html)对象中path关键词 即：$route.path）
 
 ***
 ```html
@@ -133,6 +133,45 @@ const routes = [
 ```html
 <!-- 将$route.name 作为headTitle存放标题内容的数组的下标 -->
 <h1 class="header-title">{{ headTitle[$route.name] }}</h1>
+```
+## 组件之间的通信（父传子靠props，子传父靠$emit&$on,子传子（后续会添加。。。），再复杂了点就用到了vuex）
+### 父传子（后续内容。。。）
+> 子传父
+```
+<!-- 子组件 -->
+<template>
+  <ul class="tag-list">
+    <li v-for="(item,index) in tagList" v-text="item.name" :class="{cur:item.iscur}" @click="setCur(index)">
+    </li>
+  </ul>
+</template>
+methods:{
+ setCur:function(index){
+     var _this = this;
+     _this.tagList.map(function(val,i){
+     if(i == index){
+         val.iscur = true;
+         _this.$emit('changeTab', i)  // 事件监听(中转站)传递给父组件一个自定义changeTab事件 并且把i索引值带过去
+     }else{
+         val.iscur = false;
+     }
+   })
+ }
+}
+```
+```
+<!-- 父组件 -->
+<template>
+  <div id="classfy">
+    <!-- 子组件传过来的自定义changeTab事件 -->
+    <classfy-left-bar @changeTab="changeContent"></classfy-left-bar>
+  </div>
+</template>
+methods:{
+  changeContent:function(index){
+      this.content = this.wholeCont[index].replace(/'/g,'')
+  }
+}
 ```
 
 
