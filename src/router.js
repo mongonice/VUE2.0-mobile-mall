@@ -11,20 +11,10 @@ import My from './pages/My'
 Vue.use(VueRouter)
 
 // 定义路由，以及设置组件和路由的映射
-// const routes = [
-// 	{ path: '/', component: Home},
-// 	{ path: '/Home', component: Home},
-// 	{ path: '/Classfy', component: Classfy},
-// 	{ path: '/Buy', component: Buy},
-// 	{ path: '/My', component: My}
-// ];
-
 const routes = [
 	{ 
 		path: '/',
-		name:'0',
-		component: Home, 
-		meta: {title:'环球小镇'}
+		redirect:'Home'
 	},
 	{ 
 		path: '/Home', 

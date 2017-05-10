@@ -2,7 +2,9 @@
   <div id="app">
     <my-header></my-header>
     <!-- 切换页面 -->
-    <router-view></router-view>
+    <!-- <transition name="fade" mode="out-in"> -->
+      <router-view></router-view>
+    <!-- </transition> -->
     <!-- 引用组件底部 -->
     <my-footer></my-footer>
   </div>
@@ -57,7 +59,7 @@ html,body{
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  /*color: #2c3e50;*/
   /*margin-top: 60px;*/
 }
 </style>
