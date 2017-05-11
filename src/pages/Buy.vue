@@ -6,7 +6,6 @@
           <span class="goods-edit" v-text="order.isEdit ? '编辑' : '完成'" @click="editGoods(index)"></span>
         </div>
         <div class="clearfix">
-          <!-- <span :class="[fl, goods-radio, el-icon-check, isSelected ? 'active' : '']" @click="selectGoods(index)"></span> -->
           <span :class="['fl', 'goods-radio', 'el-icon-check', {'active': order.isSelected }]" @click="selectGoods(index)"></span>
           <img :src="order.ProductThumbnail" alt="" class="pro-thumbnail fl">
           <div class="fl" v-if="order.isEdit">
@@ -49,7 +48,11 @@
 export default {
   name: 'Buy',
   created () {
-
+   this.orders.map(function(val, i){
+      if(val.detail.length > 20){
+        val.detail = val.detail.substring(0,20)+'...';
+      }
+    })
   },
   data () {
     return {
