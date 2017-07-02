@@ -83,6 +83,12 @@ export default {
     }
   }
 }
+
+function move(){
+  setInerval(function(){
+
+  }, 1000)
+}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
@@ -169,7 +175,7 @@ export default {
       } 
     }
     .move{
-      animation: upandown linear 0.2s infinite; 
+      animation: upandown linear 0.2s infinite;
     }
   }
 }

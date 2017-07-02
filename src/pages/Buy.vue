@@ -11,7 +11,7 @@
           <div class="fl" v-if="order.isEdit">
             <div class="fl goods-info goods-info-w">{{ order.detail }}</div>
             <div class="fl">
-              <p class="goods-info"><span class="goods-price">￥{{ order.unitPrice * order.number | keepTwo}} </span></p>
+              <p class="goods-info"><span class="goods-price">￥{{ order.unitPrice | keepTwo}} </span></p>
               <p class="goods-info">× {{ order.number }} </p>
             </div>
           </div>
@@ -129,10 +129,15 @@ export default {
 
     // 点击减
     minusNumber:function(index){
-      this.orders.map(function(val, i){
+      var _this = this
+      _this.orders.map(function(val, i){
         if(index == i){
-          if(val.number>0){
+          if(val.number>1){
             val.number--;
+            if(val.isSelected){
+              _this.goodsTotal--;
+              _this.actualPay -= val.unitPrice
+            }
           }
           val.total = val.number * val.unitPice;
         }
@@ -140,29 +145,44 @@ export default {
     },
     // 点击加
     addNumber:function(index){
-      this.orders.map(function(val, i){
+      var _this = this;
+      _this.orders.map(function(val, i){
         if(index == i){
           val.number++;
+          if(val.isSelected){
+            _this.goodsTotal++;
+            _this.actualPay += val.unitPrice
+          }
         }
       })
     },
     // 点击删除键
     delGoods:function(index){
-      this.orders.splice(index,1)
+      var _this = this
+      _this.orders.map(function(val, i){
+        if(index == i){
+          console.log(val.isSelected)
+          if(val.isSelected){
+            _this.goodsTotal -= val.number
+            _this.actualPay -= val.number*val.unitPrice
+          }
+        }
+      }) 
+      _this.orders.splice(index, 1)
     },
     // 选中商品
     selectGoods:function(index){
       var _this = this;
       _this.orders.map(function(val, i){
         if(index == i){
-          if(val.isSelected == false){
+          if(val.isSelected === false){
             val.isSelected = true;
-             _this.goodsTotal++;
-             _this.actualPay += (val.unitPrice*val.number)
+            _this.goodsTotal += val.number;
+            _this.actualPay += (val.unitPrice*val.number)
           }else{
             val.isSelected = false;
-             _this.goodsTotal--;
-             _this.actualPay -= (val.unitPrice*val.number)
+            _this.goodsTotal -= val.number;
+            _this.actualPay -= (val.unitPrice*val.number)
           }
          
         }

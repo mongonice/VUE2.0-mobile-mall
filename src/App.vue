@@ -2,9 +2,9 @@
   <div id="app">
     <my-header></my-header>
     <!-- 切换页面 -->
-    <!-- <transition name="fade" mode="out-in"> -->
+    <transition name="slide">
       <router-view></router-view>
-    <!-- </transition> -->
+    </transition>
     <!-- 引用组件底部 -->
     <my-footer></my-footer>
   </div>
@@ -59,8 +59,20 @@ html,body{
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  /*color: #2c3e50;*/
-  /*margin-top: 60px;*/
+}
+.slide-enter {
+  transform: translateX(0);
+}
+.slide-leave{
+  transform: translateX(0);
+}
+.slide-enter-active{
+  transform: translateX(-100%);
+  transition: all 1s ease;
+}
+.slide-leave-active{
+  transform: translateX(-100%);
+  transition: all 1s ease;
 }
 </style>
 

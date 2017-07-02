@@ -3,8 +3,8 @@
     <!--    头部轮播图    -->
     <div class="block">
       <el-carousel trigger="click">
-        <el-carousel-item v-for="item in items">
-          <a :href="item.url" class="h-header-tab">{{ item.title }}</a>
+        <el-carousel-item v-for="(item, index) in items" :key="item.id">
+          <a :href="item.url" class="h-header-tab"><img :src="item.proUrl" alt=""></a>
         </el-carousel-item>
       </el-carousel>
     </div>
@@ -44,20 +44,28 @@ export default {
     return {
       items:[
         {
-          title:'Vue.js',
-          url:'https://www.baidu.com'
+          title: 'Vue.js',
+          id: 1,
+          proUrl: require('../assets/images/slide1.jpg'),
+          url: 'https://www.baidu.com'
         },
         {
-          title:'Node.js',
-          url:'https://www.baidu.com'
+          title: 'Node.js',
+          id: 2,
+          proUrl: require('../assets/images/slide2.jpg'),
+          url: 'https://www.baidu.com'
         },
         {
-          title:'Webpack',
-          url:'https://www.baidu.com'
+          title: 'Webpack',
+          id: 3,
+          proUrl: require('../assets/images/slide3.jpg'),
+          url: 'https://www.baidu.com'
         },
         {
-          title:'ES6',
-          url:'https://www.baidu.com'
+          title: 'ES6',
+          id: 4,
+          proUrl: require('../assets/images/slide4.jpg'),
+          url: 'https://www.baidu.com'
         }
       ],
       themeList:null
