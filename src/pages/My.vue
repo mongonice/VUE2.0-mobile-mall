@@ -19,7 +19,7 @@
         <img class="fl" :src="item.iconUrl" />
         <i class="fl m-a1">{{ item.text }}</i>
         <i class="fr m-t el-icon-arrow-right"></i>
-        <i :class="['fr', 'm-a2', 'number-style',{'move': index== 0} ]" v-if="item.typeNumber">{{ item.typeNumber }}</i>
+        <i :class="['fr', 'm-a2', 'number-style',{'move': index == 0} ]" v-if="item.typeNumber">{{ item.typeNumber }}</i>
       </li>
     </ul>
   </div>
@@ -29,11 +29,10 @@
 export default {
   name: 'My',
   mounted () {
-
   },
   data () {
     return {
-      imageUrl: require('../assets/images/my-icon.png'),
+      imageUrl: require('../assets/images/my-icon.jpg'),
       userName:'手机尾号0808',
       items:[
         {

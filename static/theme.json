@@ -1,27 +1,33 @@
 {
 	"data":[
 	{
-	   "url":"##",
-	   "imgUrl":"http://localhost:8080/static/images/one.png"
+	   "classId": 1,
+	   "classTitle": "baby",
+	   "imgUrl": "http://localhost:8080/static/images/one.png"
 	},
 	{
-	   "url":"##",
-	   "imgUrl":"http://localhost:8080/static/images/one.png"
+	   "classId": 1,
+	   "classTitle": "baby",
+	   "imgUrl": "http://localhost:8080/static/images/one.png"
 	},
 	{
-	   "url":"##",
-	   "imgUrl":"http://localhost:8080/static/images/two.png"
+	   "classId": 1,
+	   "classTitle": "baby",
+	   "imgUrl": "http://localhost:8080/static/images/two.png"
 	},
 	{
-	   "url":"##",
-	   "imgUrl":"http://localhost:8080/static/images/two.png"
+	   "classId": 1,
+	   "classTitle": "baby",
+	   "imgUrl": "http://localhost:8080/static/images/two.png"
 	},
 	{
-	   "url":"##",
-	   "imgUrl":"http://localhost:8080/static/images/one.png"
+	   "classId": 1,
+	   "classTitle": "baby",
+	   "imgUrl": "http://localhost:8080/static/images/one.png"
 	},
 	{
-	   "url":"##",
-	   "imgUrl":"http://localhost:8080/static/images/one.png"
+	   "classId": 1,
+	   "classTitle": "baby",
+	   "imgUrl": "http://localhost:8080/static/images/one.png"
 	},
 ]}

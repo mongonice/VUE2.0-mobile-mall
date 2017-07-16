@@ -167,8 +167,11 @@ export default {
             _this.actualPay -= val.number*val.unitPrice
           }
         }
-      }) 
+      })
       _this.orders.splice(index, 1)
+      if(_this.orders.length === 0){
+      	_this.isHave = false
+      }
     },
     // 选中商品
     selectGoods:function(index){

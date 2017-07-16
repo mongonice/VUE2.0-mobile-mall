@@ -14,31 +14,49 @@ Vue.use(VueRouter)
 const routes = [
 	{ 
 		path: '/',
-		redirect:'Home'
+		redirect:'Home',
 	},
 	{ 
 		path: '/Home', 
-		name:'0',
-		component: Home, 
-		meta:{title:'环球小镇'}
+		component: Home,
+		children: [
+		  {
+		  	path: '/',
+		    name : 'Home', 
+		    component: r => require.ensure([], () => r(require('./pages/HomeBase.vue')), 'Home')
+		  },
+		  {
+		  	path: ':classId/:classTitle',
+		  	component: r => require.ensure([], () => r(require('./pages/HomeGoodsList.vue')), 'HomeGoodsList'),
+		  	children: [
+		  		{
+		  			path: '/',
+				  	name: 'List',
+				  	component: r => require.ensure([], () => r(require('./pages/HomeGoodsListBase.vue')), 'HomeGoodsList'),
+		  		},
+		  		{
+		  			path: '/GoodsDetail',
+				  	name: 'GoodsDetail',
+				  	component: r => require.ensure([], () => r(require('./pages/HomeGoodsListDetail.vue')), 'HomeGoodsListDetail'),
+		  		}
+		  	]
+		  }
+		]
 	},
 	{ 
 		path: '/Classfy', 
-		name:'1',
-		component: Classfy, 
-		meta:{title:'分类'}
+		name: 'Classfy',
+		component: Classfy,
 	},
 	{ 
 		path: '/Buy', 
-		name:'2',
+		name:'Buy',
 		component: Buy, 
-		meta:{title:'购物车'}
 	},
 	{ 
 		path: '/My', 
-		name:'3',
-		component: My, 
-		meta:{title:'我的'}
+		name:'My',
+		component: My,
 	}	
 ];
 

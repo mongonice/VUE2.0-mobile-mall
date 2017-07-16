@@ -29,9 +29,7 @@ export default {
     myFooter
   },
   methods: {
-    highLight () {
-
-    }
+    
   }
 }
 </script>
@@ -61,18 +59,22 @@ html,body{
   text-align: center;
 }
 .slide-enter {
+  -webkit-transform: translateX(0);
   transform: translateX(0);
 }
 .slide-leave{
+  -webkit-transform: translateX(0);
   transform: translateX(0);
 }
 .slide-enter-active{
-  transform: translateX(-100%);
-  transition: all 1s ease;
+  -webkit-transform: translateX(100%);
+  transform: translateX(100%);
+  transition: all 0.1s ease;
 }
 .slide-leave-active{
+  -webkit-transform: translateX(-100%);
   transform: translateX(-100%);
-  transition: all 1s ease;
+  transition: all 0.1s ease;
 }
 </style>
 

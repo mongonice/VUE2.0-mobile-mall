@@ -9,12 +9,12 @@ export default {
   name: 'myHeader',
   data () {
     return {
-      headTitle:[
-        '环球小镇',
-        '分类',
-        '购物车',
-        '我的'
-      ]
+      headTitle:{
+        'Home': '环球小镇',
+        'Classfy': '分类',
+        'Buy': '购物车',
+        'My': '我的'
+      }
     }
   }
 }
