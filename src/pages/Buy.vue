@@ -1,5 +1,10 @@
 <template>
   <div v-if="isHave">
+    <ul>
+      <li v-for="(item, index) in cartList" :key="item.id">
+       {{ item.id }} - {{ item.unitPrice }}
+      </li>
+    </ul>
     <ul class="goods-list">
       <li v-for="(order, index) in orders">
         <div class="clearfix">
@@ -45,6 +50,7 @@
 </template>
 
 <script>
+import { mapState } from 'vuex'
 export default {
   name: 'Buy',
   created () {
@@ -210,6 +216,9 @@ export default {
           _this.actualPay = 0;
         }
     }
+  },
+  computed: {
+    ...mapState(['cartList'])
   }
 }
 </script>

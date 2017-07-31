@@ -50,7 +50,7 @@ npm run dev
 │   ├── components      // 零部件组件
 |       └── ...
 |   |—— pages           // 组装起来的页面组件
-│   ├── vuex            // 复杂的逻辑要用vuex存储公共状态   ???????
+│   ├── vuex            // 复杂的逻辑要用vuex存储公共状态，方便组件之间的通信
 │   ├── App.vue         // 根组件 
 │   ├── main.js         // app入口文件(调动所有的js模块)
 │   └── router.js       // 路由配置
@@ -173,6 +173,45 @@ methods:{
   }
 }
 ```
+
+### 2017.07.28 解决了个人主页中消息提示的高级动画间隔循环动画效果
+---
+> 解决思路：前百分之20是运动的，后百分之80是静止状态，这静止状态就相当于动画间隔
+```
+@keyframes upandown { 
+  0% { 
+	transform:translateY(0.06rem);
+	-webkit-transform:translateY(0.06rem);
+  } 
+  5% { 
+	transform:translateY(-0.06rem);
+	-webkit-transform:translateY(-0.06rem);
+  } 
+  10% { 
+	transform:translateY(0.06rem);
+	-webkit-transform:translateY(0.06rem);
+  } 
+  15% { 
+	transform:translateY(-0.06rem);
+	-webkit-transform:translateY(-0.06rem);
+  } 
+  20% { 
+	transform:translateY(0.06rem);
+	-webkit-transform:translateY(0.06rem);
+  } 
+  100% { 
+	transform:translateY(0.06rem);
+	-webkit-transform:translateY(0.06rem);
+  } 
+}
+
+```
+
+![test](./static/images/goods2.jpg)
+
+### 引入公共样式 2017.07.31 
+
+在main.js中 import './assets/css/base.css'
 
 
 

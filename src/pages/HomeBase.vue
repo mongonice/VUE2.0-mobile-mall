@@ -1,7 +1,7 @@
 <template>
   <div id="HomeDefault">
     <!--    头部轮播图    -->
-    <v-slider></v-slider>
+    <header-slider></header-slider>
     <!-- 分类  -->
     <div>
       <h2 class="h-second-tit">主题馆</h2>
@@ -24,7 +24,7 @@
   </div>
 </template>
 <script>
-import vSlider from '../components/v-slider.vue'
+import headerSlider from '../components/homeHeaderSlider.vue'
 export default {
   name: 'HomeBase',
   created () {
@@ -44,7 +44,7 @@ export default {
     }
   },
   components:{
-    'v-slider': vSlider
+    headerSlider
   }
 }
 </script>

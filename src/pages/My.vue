@@ -29,6 +29,7 @@
 export default {
   name: 'My',
   mounted () {
+    var move = document.getElementsByClassName('move')[0];
   },
   data () {
     return {
@@ -153,28 +154,58 @@ function move(){
     }
     @keyframes upandown { 
       0% { 
-        transfrom:translateY(0);
-        -webkit-transform:translateY(0);
-      } 
-      25% { 
-        transfrom:translateY(0.06rem);
+        transform:translateY(0.06rem);
         -webkit-transform:translateY(0.06rem);
       } 
-      50% { 
-        transfrom:translateY(0);
-        -webkit-transform:translateY(0);
-      } 
-      75% { 
-        transfrom:translateY(-0.06rem);
+      5% { 
+        transform:translateY(-0.06rem);
         -webkit-transform:translateY(-0.06rem);
       } 
+      10% { 
+        transform:translateY(0.06rem);
+        -webkit-transform:translateY(0.06rem);
+      } 
+      15% { 
+        transform:translateY(-0.06rem);
+        -webkit-transform:translateY(-0.06rem);
+      } 
+      20% { 
+        transform:translateY(0.06rem);
+        -webkit-transform:translateY(0.06rem);
+      } 
       100% { 
-        transfrom:translateY(0);
-        -webkit-transform:translateY(0);
+        transform:translateY(0.06rem);
+        -webkit-transform:translateY(0.06rem);
+      } 
+    }
+    @-webkit-keyframes upandown { 
+      0% { 
+        transform:translateY(0.06rem);
+        -webkit-transform:translateY(0.06rem);
+      } 
+      5% { 
+        transform:translateY(-0.06rem);
+        -webkit-transform:translateY(-0.06rem);
+      } 
+      10% { 
+        transform:translateY(0.06rem);
+        -webkit-transform:translateY(0.06rem);
+      } 
+      15% { 
+        transform:translateY(-0.06rem);
+        -webkit-transform:translateY(-0.06rem);
+      } 
+      20% { 
+        transform:translateY(0.06rem);
+        -webkit-transform:translateY(0.06rem);
+      } 
+      100% { 
+        transform:translateY(0.06rem);
+        -webkit-transform:translateY(0.06rem);
       } 
     }
     .move{
-      animation: upandown linear 0.2s infinite;
+      animation: upandown linear 3s infinite;
     }
   }
 }

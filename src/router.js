@@ -12,20 +12,16 @@ Vue.use(VueRouter)
 
 // 定义路由，以及设置组件和路由的映射
 const routes = [
-	{ 
-		path: '/',
-		redirect:'Home',
-	},
-	{ 
-		path: '/Home', 
-		component: Home,
-		children: [
-		  {
+    { 
+	  path: '/Home', 
+	  component: Home,
+	  children: [
+		{
 		  	path: '/',
 		    name : 'Home', 
 		    component: r => require.ensure([], () => r(require('./pages/HomeBase.vue')), 'Home')
-		  },
-		  {
+		},
+		{
 		  	path: ':classId/:classTitle',
 		  	component: r => require.ensure([], () => r(require('./pages/HomeGoodsList.vue')), 'HomeGoodsList'),
 		  	children: [
@@ -38,26 +34,43 @@ const routes = [
 		  			path: '/GoodsDetail',
 				  	name: 'GoodsDetail',
 				  	component: r => require.ensure([], () => r(require('./pages/HomeGoodsListDetail.vue')), 'HomeGoodsListDetail'),
+				  	children: [
+				  		{
+				  		  path: 'a',
+				  		  name: 'base',
+				  		  component: r => require.ensure([], () => r(require('./pages/GoodsDetailBase.vue')), 'base'),
+				  		},
+				  		{
+				  		  path: 'b',
+				  		  name: 'desc',
+				  		  component: r => require.ensure([], () => r(require('./pages/GoodsDetailDesc.vue')), 'desc'),
+				  		},
+				  		{
+                          path: 'c',
+                          name: 'comment',
+                          component: r => require.ensure([], () => r(require('./pages/GoodsDetailComment.vue')), 'comment')
+				  		}
+				  	]
 		  		}
 		  	]
-		  }
-		]
+		}
+	 ]
 	},
 	{ 
-		path: '/Classfy', 
-		name: 'Classfy',
-		component: Classfy,
+      path: '/Classfy', 
+      name: 'Classfy',
+      component: Classfy,
 	},
 	{ 
-		path: '/Buy', 
-		name:'Buy',
-		component: Buy, 
+      path: '/Buy', 
+      name:'Buy',
+      component: Buy, 
 	},
 	{ 
-		path: '/My', 
-		name:'My',
-		component: My,
-	}	
+      path: '/My', 
+      name:'My',
+      component: My,
+	}
 ];
 
 // 创建router实例，设置路由等参数

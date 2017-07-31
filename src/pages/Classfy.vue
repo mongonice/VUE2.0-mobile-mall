@@ -19,7 +19,7 @@
 </template>
 
 <script>
-import ClassfyLeftBar from '../components/v-left-bar.vue'
+import ClassfyLeftBar from '../components/classfyLeftBar.vue'
 export default {
   name: 'Classfy',
   created () {
