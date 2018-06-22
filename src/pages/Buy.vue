@@ -1,12 +1,12 @@
 <template>
   <div v-if="isHave">
     <ul>
-      <li v-for="(item, index) in cartList" :key="item.id">
+      <li v-for="(item, index) in cartList" :key="`key_${index}`">
        {{ item.id }} - {{ item.unitPrice }}
       </li>
     </ul>
     <ul class="goods-list">
-      <li v-for="(order, index) in orders">
+      <li v-for="(order, index) in orders" :key="index">
         <div class="clearfix">
           <span class="goods-edit" v-text="order.isEdit ? '编辑' : '完成'" @click="editGoods(index)"></span>
         </div>
